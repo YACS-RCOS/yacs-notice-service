@@ -1,6 +1,6 @@
-FROM ruby:2.5.1-alpine
+FROM ruby:2.4.2
 
-RUN apk add --update ruby-dev build-base
+RUN apt-get update && apt-get install -qq -y build-essential nodejs wget postgresql-client --fix-missing --no-install-recommends
 
 ENV INSTALL_PATH /usr/src/app
 RUN mkdir -p $INSTALL_PATH
