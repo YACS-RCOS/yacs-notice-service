@@ -1,8 +1,8 @@
-FROM ruby:2.4.2
+FROM ruby:2.5.1
 
 RUN apt-get update && apt-get install -qq -y build-essential nodejs wget postgresql-client --fix-missing --no-install-recommends
 
-ENV INSTALL_PATH /usr/src/app
+ENV INSTALL_PATH /usr/src/app/
 RUN mkdir -p $INSTALL_PATH
 
 WORKDIR $INSTALL_PATH
