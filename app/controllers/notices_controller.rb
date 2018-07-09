@@ -3,7 +3,7 @@ class NoticesController < ApplicationController
 
   # GET /notices
   def index
-    @notices = Notice.all
+    @notices = Notice.current
 
     render json: @notices
   end
