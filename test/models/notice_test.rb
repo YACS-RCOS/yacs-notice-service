@@ -18,7 +18,7 @@ class NoticeTest < ActiveSupport::TestCase
     notice1 = Notice.create(start_date: Date.tomorrow, end_date: Date.yesterday) #bad
     notice2 = Notice.create(start_date:5.days.from_now, end_date: Date.yesterday) #bad
 
-    assert_equals(Notice.cuerrent, nil)
+    assert_equals(Notice.current, nil)
   end
 
   test "current scope does not return future dates" do
