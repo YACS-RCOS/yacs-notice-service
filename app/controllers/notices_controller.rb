@@ -16,7 +16,6 @@ class NoticesController < ApplicationController
   # POST /notices
   def create
     @notice = Notice.new(notice_params)
-
     if @notice.save
       render json: @notice, status: :created, location: @notice
     else
@@ -46,6 +45,6 @@ class NoticesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def notice_params
-      params.require(:notice).permit(:message, :type, :start_date, :end_date)
+      params.require(:notice).permit(:message, :alert_type, :start_date, :end_date)
     end
 end
