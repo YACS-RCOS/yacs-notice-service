@@ -24,7 +24,9 @@ class NoticesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update notice" do
-    patch notice_url(@notice), params: { notice: { end_date: @notice.end_date, message: @notice.message, start_date: @notice.start_date, alert_type: @notice.alert_type } }, as: :json
+    patch notice_url(@notice), params: { notice: { end_date: @notice.end_date, message: "updated", start_date: @notice.start_date, alert_type: @notice.alert_type } }, as: :json
+    @notice.reload
+    assert_equal( @notice.message, "updated")
     assert_response 200
   end
 
