@@ -16,7 +16,7 @@ class NoticeTest < ActiveSupport::TestCase
   test "reversed dates are invalid" do
     assert_not( Notice.create(message: "Hello world!", alert_type: "info", start_date: 10.days.from_now, end_date: Date.yesterday).valid? )
     assert_not( Notice.create(message: "Hello world!", alert_type: "info", start_date: Date.tomorrow, end_date: Date.yesterday).valid? )
-    assert_not( Notice.create(message: "Hello world!", alert_type: "info", start_date:5.days.from_now, end_date: Date.yesterday).valid? )
+    assert_not( Notice.create(message: "Hello world!", alert_type: "info", start_date: 5.days.from_now, end_date: Date.yesterday).valid? )
 
   end
 
