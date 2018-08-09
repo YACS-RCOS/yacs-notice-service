@@ -32,6 +32,7 @@ class NoticesControllerTest < ActionDispatch::IntegrationTest
     
     json_response = JSON.parse(response.body)
     assert_equal "updated", json_response["message"]
+
     assert_response 200
   end
 
