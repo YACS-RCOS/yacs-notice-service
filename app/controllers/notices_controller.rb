@@ -1,6 +1,8 @@
 class NoticesController < ApplicationController
   before_action :set_notice, only: [:show, :update, :destroy]
 
+  before_action :allow_access
+
   # GET /notices
   def index
     @notices = Notice.current
@@ -46,5 +48,11 @@ class NoticesController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def notice_params
       params.require(:notice).permit(:message, :alert_type, :start_date, :end_date)
+    end
+
+    def allow_access
+      if session[:token].nil?
+        render json: {}, status: 401
+      end
     end
 end
