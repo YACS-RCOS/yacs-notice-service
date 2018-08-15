@@ -1,7 +1,7 @@
 class NoticesController < ApplicationController
   before_action :set_notice, only: [:show, :update, :destroy]
 
-  before_action :allow_access
+  before_action :require_token
 
   # GET /notices
   def index
@@ -50,7 +50,7 @@ class NoticesController < ApplicationController
       params.require(:notice).permit(:message, :alert_type, :start_date, :end_date)
     end
 
-    def allow_access
+    def require_token
       if session[:token].nil?
         render json: {}, status: 401
       end
