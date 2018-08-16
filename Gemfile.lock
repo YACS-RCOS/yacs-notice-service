@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/YACS-RCOS/yacs-auth.git
+  revision: 9208d020d290ebd055cecef99071ac35e6e04f46
+  branch: master
+  specs:
+    yacs-auth (0.1.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -145,6 +152,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
+  yacs-auth!
 
 RUBY VERSION
    ruby 2.5.1p57

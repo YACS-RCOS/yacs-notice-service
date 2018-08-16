@@ -28,6 +28,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 #Netflix Fast json API used to seriailize API responses
 gem 'fast_jsonapi', '~> 1.3'
 
+#Use the Yacs Auth library to secure NoticesController
+gem 'yacs-auth', git:"https://github.com/YACS-RCOS/yacs-auth.git", branch: 'master'
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
